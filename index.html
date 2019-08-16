@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="shortcut icon" type="image/x-icon" href="./static/glsfavicon.ico" />
+  <title>谷联社</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script> -->
+<!-- 腾讯视频播放器 -->
+<!-- <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-module-2.3.1.js"></script> -->
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  input,
+  textarea,
+  select,
+  button,
+  a:focus {
+    outline: none;
+    font-size: 0.26rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  /* 去掉默认样式 */
+  select {
+    /* appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none; */
+    border: none;
+    background: rgba(0, 0, 0, 0);
+  }
+
+  input[type="number"] {
+    -webkit-appearance: none !important;
+  }
+
+  input[type="password"] {
+    -webkit-appearance: none !important;
+  }
+
+  input[type="text"] {
+    -webkit-appearance: none !important;
+  }
+
+  input[type="search"] {
+    -webkit-appearance: none !important;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none !important;
+  }
+
+
+  /* 头部标题栏 */
+  .mint-header {
+    height: 0.8rem;
+    background: #ef6213;
+    padding: 0 0.2rem;
+  }
+
+  .mint-header.is-fixed {
+    background: #ef6213;
+  }
+
+  .mint-header-title {
+    font-size: .32rem;
+    line-height: .8rem;
+  }
+
+  .mint-tabbar>.mint-tab-item.is-selected {
+    color: #ef6213;
+  }
+
+  .slide-right-enter-active,
+  .slide-right-leave-active,
+  .slide-left-enter-active,
+  .slide-left-leave-active {
+    will-change: transform;
+    transition: all 500ms;
+    position: absolute;
+  }
+
+  .slide-right-enter {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  .slide-right-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .slide-left-enter {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .slide-left-leave-active {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  .vux-tab-wrap {
+    position: relative;
+  }
+
+  .van-tabs__line {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    z-index: 1;
+    height: 3px;
+    background-color: #ef6213;
+    border-radius: 3px;
+  }
+
+  .is-left,
+  .is-right {
+    font-size: 0.28rem;
+  }
+
+  .mint-header .mint-button {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    height: .8rem;
+  }
+
+  .mintui {
+    font-size: .28rem;
+  }
+
+  .mint-header-button>a>button:nth-child(1)>span {
+    border-top-left-radius: .08rem;
+    border-bottom-left-radius: .08rem;
+    font-size: 0.28rem;
+  }
+
+  .mint-header .mint-button>label {
+    font-size: 0.28rem;
+  }
+
+  /* 搜索框 */
+  .search input {
+    height: 0.6rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border: 1px solid #ef6213;
+    border-radius: 0.3rem;
+    padding: 0 0.1rem;
+    color: #ef6213;
+    font-size: 0.28rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .search {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    right: 0.2rem;
+    margin: auto;
+    text-align: center;
+  }
+
+  .search input::-webkit-input-placeholder {
+    color: #999;
+    text-align: center;
+  }
+
+  .search input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999;
+    text-align: center;
+  }
+
+  .search input::-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999;
+    text-align: center;
+  }
+
+  .search input::-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #999;
+    text-align: center;
+  }
+
+  /* .swipe .search button i {
+  display: inline-block;
+  font-size: 0.32rem;
+  line-height: 0.6rem;
+} */
+  .search button:disabled {
+    background: transparent;
+    color: #ef6213;
+  }
+
+  .search button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    text-align: center;
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+    border: none;
+    background: #ef6213;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  .search button i {
+    display: inline-block;
+    font-size: 0.32rem;
+    line-height: 0.6rem;
+  }
+
+  /* 轮播图 */
+  .mint-swipe {
+    width: 100%;
+    height: 4.4rem;
+  }
+
+  .mint-swipe img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mint-tab-item-label {
+    font-size: 0.24rem;
+  }
+
+  /* toast轻提示 */
+  .mint-toast {
+    position: fixed;
+    max-width: 80%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 6000;
+    -webkit-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+  }
+
+  /* 视频 */
+  .video-js .vjs-big-play-button {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+    font-size: 3em;
+    line-height: 1.5em;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+  }
+
+</style>
+
+</html>
