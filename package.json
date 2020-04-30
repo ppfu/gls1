@@ -13,7 +13,7 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "dplayer": "^1.25.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-weui": "^1.2.1",
     "popper.js": "^1.15.0",
     "postcss-pxtorem": "^4.0.1",
